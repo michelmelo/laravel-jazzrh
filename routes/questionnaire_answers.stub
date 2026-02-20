@@ -1,0 +1,5 @@
+use MichelMelo\JazzRh\Controllers\QuestionnaireAnswerController;
+
+// ...existing code...
+
+Route::apiResource('questionnaire_answers', QuestionnaireAnswerController::class);

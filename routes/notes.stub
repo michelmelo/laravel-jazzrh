@@ -1,0 +1,5 @@
+use MichelMelo\JazzRh\Controllers\NoteController;
+
+// ...existing code...
+
+Route::apiResource('notes', NoteController::class);

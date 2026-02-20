@@ -1,0 +1,82 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Activities ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "activitiesID",
+                    "notes": "Returns Only One Activity",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Activity",
+                            "name": "activity_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Activities",
+                    "summary": "Find Activity By ID"
+                }
+            ],
+            "path": "/activities/activity_id"
+        },
+        {
+            "description": " Operations About Activities ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "activities",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "User ID of the Activity ",
+                            "name": "user_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Object ID of the Activity ",
+                            "name": "object_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Category of the Activity ",
+                            "name": "category",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Activities",
+                    "summary": "Find Activities By Parameters"
+                }
+            ],
+            "path": "/activities"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/activities.{format}",
+    "swaggerVersion": "1.1"
+}

@@ -1,0 +1,59 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": "Operations about activities",
+            "path": "/activities.{format}"
+        },
+        {
+            "description": "Operations about applicants",
+            "path": "/applicants.{format}"
+        },
+        {
+            "description": "Operations about Applicants to Jobs mapping",
+            "path": "/applicants2jobs.{format}"
+        },
+        {
+            "description": "Operations about categories",
+            "path": "/categories.{format}"
+        },
+        {
+            "description": "Operations about categories2applicants",
+            "path": "/categories2applicants.{format}"
+        },
+        {
+            "description": "Operations about contacts",
+            "path": "/contacts.{format}"
+        },
+        {
+            "description": "Operations about files management",
+            "path": "/files.{format}"
+        },
+        {
+            "description": "Operations about jobs",
+            "path": "/jobs.{format}"
+        },
+        {
+            "description": "Operations about notes",
+            "path": "/notes.{format}"
+        },
+        {
+            "description": "Operations about questionnaire answers",
+            "path": "/questionnaire_answers.{format}"
+        },
+        {
+            "description": "Operations about questionnaire questions",
+            "path": "/questionnaire_questions.{format}"
+        },
+        {
+            "description": "Operations about tasks",
+            "path": "/tasks.{format}"
+        },
+        {
+            "description": "Operations about users",
+            "path": "/users.{format}"
+        }
+    ],
+    "basePath": "https://www.resumatorapi.com/v1/",
+    "swaggerVersion": "1.1"
+}

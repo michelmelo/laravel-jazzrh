@@ -1,0 +1,2479 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Jobs ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "jobsID",
+                    "notes": "Returns Only One Job",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Job",
+                            "name": "job_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Jobs",
+                    "summary": "Find Job By ID"
+                }
+            ],
+            "path": "/jobs/job_id"
+        },
+        {
+            "description": " Operations About Jobs ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "jobs",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Title of the Job ",
+                            "name": "title",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Recruiter of the Job ",
+                            "name": "recruiter",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Board Code of the Job ",
+                            "name": "board_code",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Department of the Job ",
+                            "name": "department",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Hiring Lead of the Job ",
+                            "name": "hiring_lead",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Location of Job by State ",
+                            "name": "state",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Location of Job by City ",
+                            "name": "city",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Filter by job open date. Use YYYY-MM-DD format",
+                            "name": "from_open_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Filter by job open date. Use YYYY-MM-DD format",
+                            "name": "to_open_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "open",
+                                        "val": "Open"
+                                    },
+                                    {
+                                        "key": "on hold",
+                                        "val": "On Hold"
+                                    },
+                                    {
+                                        "key": "approved",
+                                        "val": "Approved"
+                                    },
+                                    {
+                                        "key": "needs approval",
+                                        "val": "Needs Approval"
+                                    },
+                                    {
+                                        "key": "drafting",
+                                        "val": "Drafting"
+                                    },
+                                    {
+                                        "key": "filled",
+                                        "val": "Filled"
+                                    },
+                                    {
+                                        "key": "cancelled",
+                                        "val": "Cancelled"
+                                    },
+                                    {
+                                        "key": "closed",
+                                        "val": "Closed"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Filter by Job Status",
+                            "name": "status",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "true",
+                                        "val": "true"
+                                    },
+                                    {
+                                        "key": "false",
+                                        "val": "false"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Filter by confidentiality",
+                            "name": "confidential",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "true",
+                                        "val": "true"
+                                    },
+                                    {
+                                        "key": "false",
+                                        "val": "false"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Filter by privacy",
+                            "name": "private",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Jobs",
+                    "summary": "Find Jobs By Parameters"
+                }
+            ],
+            "path": "/jobs"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "job",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": false,
+                            "description": "Title of the Job",
+                            "name": "title",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Hiring Lead ID",
+                            "name": "hiring_lead_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Full Time"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = Part Time"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Part Time to Full Time"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4 = Temporary"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5 = Temporary to Full Time"
+                                    },
+                                    {
+                                        "key": 6,
+                                        "val": "6 = Contracted"
+                                    },
+                                    {
+                                        "key": 7,
+                                        "val": "7 = Contracted to Full Time"
+                                    },
+                                    {
+                                        "key": 8,
+                                        "val": "8 = Internship"
+                                    },
+                                    {
+                                        "key": 9,
+                                        "val": "9 = Internship to Full Time"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 = Volunteer"
+                                    },
+                                    {
+                                        "key": 11,
+                                        "val": "11 = Seasonal"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Employment Type",
+                            "name": "employment_type",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Student (High School)"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = Student (College)"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Entry Level"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4 = Mid Level"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5 = Experienced"
+                                    },
+                                    {
+                                        "key": 6,
+                                        "val": "6 = Manager/Supervisor"
+                                    },
+                                    {
+                                        "key": 7,
+                                        "val": "7 = Senior Manager/Supervisor"
+                                    },
+                                    {
+                                        "key": 8,
+                                        "val": "8 = Executive"
+                                    },
+                                    {
+                                        "key": 9,
+                                        "val": "9 = Senior Executive"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Minimum Experience",
+                            "name": "minimum_experience",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "description": "Description - Enter 10 or more characters",
+                            "name": "description",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 1,
+                                        "val": "1 - Multiple Countries -"
+                                    },
+                                    {
+                                        "key": 72,
+                                        "val": "72 - Afghanistan"
+                                    },
+                                    {
+                                        "key": 73,
+                                        "val": "73 - Aland Islands"
+                                    },
+                                    {
+                                        "key": 74,
+                                        "val": "74 - Albania"
+                                    },
+                                    {
+                                        "key": 319,
+                                        "val": "319 - Alberta"
+                                    },
+                                    {
+                                        "key": 75,
+                                        "val": "75 - Algeria"
+                                    },
+                                    {
+                                        "key": 76,
+                                        "val": "76 - Andorra"
+                                    },
+                                    {
+                                        "key": 77,
+                                        "val": "77 - Angola"
+                                    },
+                                    {
+                                        "key": 78,
+                                        "val": "78 - Anguilla"
+                                    },
+                                    {
+                                        "key": 79,
+                                        "val": "79 - Antarctica"
+                                    },
+                                    {
+                                        "key": 80,
+                                        "val": "80 - Antigua and Barbuda"
+                                    },
+                                    {
+                                        "key": 81,
+                                        "val": "81 - Argentina"
+                                    },
+                                    {
+                                        "key": 82,
+                                        "val": "82 - Armenia"
+                                    },
+                                    {
+                                        "key": 83,
+                                        "val": "83 - Aruba"
+                                    },
+                                    {
+                                        "key": 66,
+                                        "val": "66 - Australia"
+                                    },
+                                    {
+                                        "key": 85,
+                                        "val": "85 - Austria"
+                                    },
+                                    {
+                                        "key": 86,
+                                        "val": "86 - Azerbaijan"
+                                    },
+                                    {
+                                        "key": 87,
+                                        "val": "87 - Bahamas"
+                                    },
+                                    {
+                                        "key": 88,
+                                        "val": "88 - Bahrain"
+                                    },
+                                    {
+                                        "key": 89,
+                                        "val": "89 - Bangladesh"
+                                    },
+                                    {
+                                        "key": 90,
+                                        "val": "90 - Barbados"
+                                    },
+                                    {
+                                        "key": 91,
+                                        "val": "91 - Belarus"
+                                    },
+                                    {
+                                        "key": 92,
+                                        "val": "92 - Belgium"
+                                    },
+                                    {
+                                        "key": 93,
+                                        "val": "93 - Belize"
+                                    },
+                                    {
+                                        "key": 94,
+                                        "val": "94 - Benin"
+                                    },
+                                    {
+                                        "key": 95,
+                                        "val": "95 - Bermuda"
+                                    },
+                                    {
+                                        "key": 96,
+                                        "val": "96 - Bhutan"
+                                    },
+                                    {
+                                        "key": 97,
+                                        "val": "97 - Bolivia"
+                                    },
+                                    {
+                                        "key": 98,
+                                        "val": "98 - Bosnia and Herzegovina"
+                                    },
+                                    {
+                                        "key": 99,
+                                        "val": "99 - Botswana"
+                                    },
+                                    {
+                                        "key": 100,
+                                        "val": "100 - Bouvet Island"
+                                    },
+                                    {
+                                        "key": 101,
+                                        "val": "101 - Brazil"
+                                    },
+                                    {
+                                        "key": 316,
+                                        "val": "316 - British Columbia"
+                                    },
+                                    {
+                                        "key": 102,
+                                        "val": "102 - British Indian Ocean Territory"
+                                    },
+                                    {
+                                        "key": 103,
+                                        "val": "103 - Brunei Darussalam"
+                                    },
+                                    {
+                                        "key": 104,
+                                        "val": "104 - Bulgaria"
+                                    },
+                                    {
+                                        "key": 105,
+                                        "val": "105 - Burkina Faso"
+                                    },
+                                    {
+                                        "key": 106,
+                                        "val": "106 - Burundi"
+                                    },
+                                    {
+                                        "key": 107,
+                                        "val": "107 - Cambodia"
+                                    },
+                                    {
+                                        "key": 108,
+                                        "val": "108 - Cameroon"
+                                    },
+                                    {
+                                        "key": 62,
+                                        "val": "62 - Canada"
+                                    },
+                                    {
+                                        "key": 110,
+                                        "val": "110 - Cape Verde"
+                                    },
+                                    {
+                                        "key": 111,
+                                        "val": "111 - Cayman Islands"
+                                    },
+                                    {
+                                        "key": 112,
+                                        "val": "112 - Central African Republic"
+                                    },
+                                    {
+                                        "key": 113,
+                                        "val": "113 - Chad"
+                                    },
+                                    {
+                                        "key": 114,
+                                        "val": "114 - Chile"
+                                    },
+                                    {
+                                        "key": 115,
+                                        "val": "115 - China"
+                                    },
+                                    {
+                                        "key": 116,
+                                        "val": "116 - Christmas Island"
+                                    },
+                                    {
+                                        "key": 117,
+                                        "val": "117 - Cocos (Keeling) Islands"
+                                    },
+                                    {
+                                        "key": 118,
+                                        "val": "118 - Colombia"
+                                    },
+                                    {
+                                        "key": 119,
+                                        "val": "119 - Comoros"
+                                    },
+                                    {
+                                        "key": 120,
+                                        "val": "120 - Congo"
+                                    },
+                                    {
+                                        "key": 121,
+                                        "val": "121 - Congo, The Democratic Republic of the"
+                                    },
+                                    {
+                                        "key": 122,
+                                        "val": "122 - Cook Islands"
+                                    },
+                                    {
+                                        "key": 123,
+                                        "val": "123 - Costa Rica"
+                                    },
+                                    {
+                                        "key": 124,
+                                        "val": "124 - C\u00f4te d'Ivoire"
+                                    },
+                                    {
+                                        "key": 125,
+                                        "val": "125 - Croatia"
+                                    },
+                                    {
+                                        "key": 126,
+                                        "val": "126 - Cuba"
+                                    },
+                                    {
+                                        "key": 127,
+                                        "val": "127 - Cyprus"
+                                    },
+                                    {
+                                        "key": 128,
+                                        "val": "128 - Czech Republic"
+                                    },
+                                    {
+                                        "key": 129,
+                                        "val": "129 - Denmark"
+                                    },
+                                    {
+                                        "key": 130,
+                                        "val": "130 - Djibouti"
+                                    },
+                                    {
+                                        "key": 131,
+                                        "val": "131 - Dominica"
+                                    },
+                                    {
+                                        "key": 132,
+                                        "val": "132 - Dominican Republic"
+                                    },
+                                    {
+                                        "key": 133,
+                                        "val": "133 - Ecuador"
+                                    },
+                                    {
+                                        "key": 134,
+                                        "val": "134 - Egypt"
+                                    },
+                                    {
+                                        "key": 135,
+                                        "val": "135 - El Salvador"
+                                    },
+                                    {
+                                        "key": 136,
+                                        "val": "136 - Equatorial Guinea"
+                                    },
+                                    {
+                                        "key": 137,
+                                        "val": "137 - Eritrea"
+                                    },
+                                    {
+                                        "key": 138,
+                                        "val": "138 - Estonia"
+                                    },
+                                    {
+                                        "key": 139,
+                                        "val": "139 - Ethiopia"
+                                    },
+                                    {
+                                        "key": 140,
+                                        "val": "140 - Falkland Islands (Malvinas)"
+                                    },
+                                    {
+                                        "key": 141,
+                                        "val": "141 - Faroe Islands"
+                                    },
+                                    {
+                                        "key": 11,
+                                        "val": "11 - Federated States Of Micronesia"
+                                    },
+                                    {
+                                        "key": 142,
+                                        "val": "142 - Fiji"
+                                    },
+                                    {
+                                        "key": 143,
+                                        "val": "143 - Finland"
+                                    },
+                                    {
+                                        "key": 144,
+                                        "val": "144 - France"
+                                    },
+                                    {
+                                        "key": 145,
+                                        "val": "145 - French Guiana"
+                                    },
+                                    {
+                                        "key": 146,
+                                        "val": "146 - French Polynesia"
+                                    },
+                                    {
+                                        "key": 147,
+                                        "val": "147 - French Southern Territories"
+                                    },
+                                    {
+                                        "key": 148,
+                                        "val": "148 - Gabon"
+                                    },
+                                    {
+                                        "key": 149,
+                                        "val": "149 - Gambia"
+                                    },
+                                    {
+                                        "key": 150,
+                                        "val": "150 - Georgia"
+                                    },
+                                    {
+                                        "key": 151,
+                                        "val": "151 - Germany"
+                                    },
+                                    {
+                                        "key": 152,
+                                        "val": "152 - Ghana"
+                                    },
+                                    {
+                                        "key": 153,
+                                        "val": "153 - Gibraltar"
+                                    },
+                                    {
+                                        "key": 65,
+                                        "val": "65 - Great Britain"
+                                    },
+                                    {
+                                        "key": 154,
+                                        "val": "154 - Greece"
+                                    },
+                                    {
+                                        "key": 155,
+                                        "val": "155 - Greenland"
+                                    },
+                                    {
+                                        "key": 156,
+                                        "val": "156 - Grenada"
+                                    },
+                                    {
+                                        "key": 157,
+                                        "val": "157 - Guadeloupe"
+                                    },
+                                    {
+                                        "key": 14,
+                                        "val": "14 - Guam"
+                                    },
+                                    {
+                                        "key": 159,
+                                        "val": "159 - Guatemala"
+                                    },
+                                    {
+                                        "key": 160,
+                                        "val": "160 - Guernsey"
+                                    },
+                                    {
+                                        "key": 161,
+                                        "val": "161 - Guinea"
+                                    },
+                                    {
+                                        "key": 162,
+                                        "val": "162 - Guinea-Bissau"
+                                    },
+                                    {
+                                        "key": 163,
+                                        "val": "163 - Guyana"
+                                    },
+                                    {
+                                        "key": 164,
+                                        "val": "164 - Haiti"
+                                    },
+                                    {
+                                        "key": 165,
+                                        "val": "165 - Heard Island and McDonald Islands"
+                                    },
+                                    {
+                                        "key": 166,
+                                        "val": "166 - Holy See (Vatican City State)"
+                                    },
+                                    {
+                                        "key": 167,
+                                        "val": "167 - Honduras"
+                                    },
+                                    {
+                                        "key": 168,
+                                        "val": "168 - Hong Kong"
+                                    },
+                                    {
+                                        "key": 169,
+                                        "val": "169 - Hungary"
+                                    },
+                                    {
+                                        "key": 170,
+                                        "val": "170 - Iceland"
+                                    },
+                                    {
+                                        "key": 171,
+                                        "val": "171 - India"
+                                    },
+                                    {
+                                        "key": 172,
+                                        "val": "172 - Indonesia"
+                                    },
+                                    {
+                                        "key": 173,
+                                        "val": "173 - Iran, Islamic Republic of"
+                                    },
+                                    {
+                                        "key": 174,
+                                        "val": "174 - Iraq"
+                                    },
+                                    {
+                                        "key": 175,
+                                        "val": "175 - Ireland"
+                                    },
+                                    {
+                                        "key": 176,
+                                        "val": "176 - Isle of Man"
+                                    },
+                                    {
+                                        "key": 177,
+                                        "val": "177 - Israel"
+                                    },
+                                    {
+                                        "key": 67,
+                                        "val": "67 - Italy"
+                                    },
+                                    {
+                                        "key": 179,
+                                        "val": "179 - Jamaica"
+                                    },
+                                    {
+                                        "key": 68,
+                                        "val": "68 - Japan"
+                                    },
+                                    {
+                                        "key": 181,
+                                        "val": "181 - Jersey"
+                                    },
+                                    {
+                                        "key": 182,
+                                        "val": "182 - Jordan"
+                                    },
+                                    {
+                                        "key": 183,
+                                        "val": "183 - Kazakhstan"
+                                    },
+                                    {
+                                        "key": 184,
+                                        "val": "184 - Kenya"
+                                    },
+                                    {
+                                        "key": 185,
+                                        "val": "185 - Kiribati"
+                                    },
+                                    {
+                                        "key": 186,
+                                        "val": "186 - Korea, Democratic People's Republic of"
+                                    },
+                                    {
+                                        "key": 187,
+                                        "val": "187 - South Korea"
+                                    },
+                                    {
+                                        "key": 188,
+                                        "val": "188 - Kuwait"
+                                    },
+                                    {
+                                        "key": 189,
+                                        "val": "189 - Kyrgyzstan"
+                                    },
+                                    {
+                                        "key": 190,
+                                        "val": "190 - Lao People's Democratic Republic"
+                                    },
+                                    {
+                                        "key": 191,
+                                        "val": "191 - Latvia"
+                                    },
+                                    {
+                                        "key": 192,
+                                        "val": "192 - Lebanon"
+                                    },
+                                    {
+                                        "key": 193,
+                                        "val": "193 - Lesotho"
+                                    },
+                                    {
+                                        "key": 194,
+                                        "val": "194 - Liberia"
+                                    },
+                                    {
+                                        "key": 195,
+                                        "val": "195 - Libya"
+                                    },
+                                    {
+                                        "key": 196,
+                                        "val": "196 - Liechtenstein"
+                                    },
+                                    {
+                                        "key": 197,
+                                        "val": "197 - Lithuania"
+                                    },
+                                    {
+                                        "key": 198,
+                                        "val": "198 - Luxembourg"
+                                    },
+                                    {
+                                        "key": 199,
+                                        "val": "199 - Macao"
+                                    },
+                                    {
+                                        "key": 200,
+                                        "val": "200 - Macedonia, Republic of"
+                                    },
+                                    {
+                                        "key": 201,
+                                        "val": "201 - Madagascar"
+                                    },
+                                    {
+                                        "key": 202,
+                                        "val": "202 - Malawi"
+                                    },
+                                    {
+                                        "key": 203,
+                                        "val": "203 - Malaysia"
+                                    },
+                                    {
+                                        "key": 204,
+                                        "val": "204 - Maldives"
+                                    },
+                                    {
+                                        "key": 205,
+                                        "val": "205 - Mali"
+                                    },
+                                    {
+                                        "key": 206,
+                                        "val": "206 - Malta"
+                                    },
+                                    {
+                                        "key": 315,
+                                        "val": "315 - Manitoba"
+                                    },
+                                    {
+                                        "key": 24,
+                                        "val": "24 - Marshall Islands"
+                                    },
+                                    {
+                                        "key": 207,
+                                        "val": "207 - Martinique"
+                                    },
+                                    {
+                                        "key": 208,
+                                        "val": "208 - Mauritania"
+                                    },
+                                    {
+                                        "key": 209,
+                                        "val": "209 - Mauritius"
+                                    },
+                                    {
+                                        "key": 210,
+                                        "val": "210 - Mayotte"
+                                    },
+                                    {
+                                        "key": 69,
+                                        "val": "69 - Mexico"
+                                    },
+                                    {
+                                        "key": 212,
+                                        "val": "212 - Moldova"
+                                    },
+                                    {
+                                        "key": 213,
+                                        "val": "213 - Monaco"
+                                    },
+                                    {
+                                        "key": 214,
+                                        "val": "214 - Mongolia"
+                                    },
+                                    {
+                                        "key": 215,
+                                        "val": "215 - Montenegro"
+                                    },
+                                    {
+                                        "key": 216,
+                                        "val": "216 - Montserrat"
+                                    },
+                                    {
+                                        "key": 217,
+                                        "val": "217 - Morocco"
+                                    },
+                                    {
+                                        "key": 218,
+                                        "val": "218 - Mozambique"
+                                    },
+                                    {
+                                        "key": 219,
+                                        "val": "219 - Myanmar"
+                                    },
+                                    {
+                                        "key": 220,
+                                        "val": "220 - Namibia"
+                                    },
+                                    {
+                                        "key": 221,
+                                        "val": "221 - Nauru"
+                                    },
+                                    {
+                                        "key": 222,
+                                        "val": "222 - Nepal"
+                                    },
+                                    {
+                                        "key": 223,
+                                        "val": "223 - Netherlands"
+                                    },
+                                    {
+                                        "key": 224,
+                                        "val": "224 - Netherlands Antilles"
+                                    },
+                                    {
+                                        "key": 314,
+                                        "val": "314 - New Brunswick"
+                                    },
+                                    {
+                                        "key": 225,
+                                        "val": "225 - New Caledonia"
+                                    },
+                                    {
+                                        "key": 226,
+                                        "val": "226 - New Zealand"
+                                    },
+                                    {
+                                        "key": 320,
+                                        "val": "320 - Newfoundland and Labrador"
+                                    },
+                                    {
+                                        "key": 227,
+                                        "val": "227 - Nicaragua"
+                                    },
+                                    {
+                                        "key": 228,
+                                        "val": "228 - Niger"
+                                    },
+                                    {
+                                        "key": 229,
+                                        "val": "229 - Nigeria"
+                                    },
+                                    {
+                                        "key": 230,
+                                        "val": "230 - Niue"
+                                    },
+                                    {
+                                        "key": 231,
+                                        "val": "231 - Norfolk Island"
+                                    },
+                                    {
+                                        "key": 40,
+                                        "val": "40 - Northern Mariana Islands"
+                                    },
+                                    {
+                                        "key": 321,
+                                        "val": "321 - Northwest Territories"
+                                    },
+                                    {
+                                        "key": 232,
+                                        "val": "332 - Norway"
+                                    },
+                                    {
+                                        "key": 313,
+                                        "val": "313 - Nova Scotia"
+                                    },
+                                    {
+                                        "key": 323,
+                                        "val": "323 - Nunavut"
+                                    },
+                                    {
+                                        "key": 233,
+                                        "val": "233 - Oman"
+                                    },
+                                    {
+                                        "key": 311,
+                                        "val": "311 - Ontario"
+                                    },
+                                    {
+                                        "key": 234,
+                                        "val": "234 - Pakistan"
+                                    },
+                                    {
+                                        "key": 44,
+                                        "val": "44 - Palau"
+                                    },
+                                    {
+                                        "key": 235,
+                                        "val": "235 - Palestinian Territory, Occupied"
+                                    },
+                                    {
+                                        "key": 236,
+                                        "val": "236 - Panama"
+                                    },
+                                    {
+                                        "key": 237,
+                                        "val": "237 - Papua New Guinea"
+                                    },
+                                    {
+                                        "key": 238,
+                                        "val": "238 - Paraguay"
+                                    },
+                                    {
+                                        "key": 239,
+                                        "val": "239 - Peru"
+                                    },
+                                    {
+                                        "key": 240,
+                                        "val": "240 - Philippines"
+                                    },
+                                    {
+                                        "key": 241,
+                                        "val": "241 - Pitcairn"
+                                    },
+                                    {
+                                        "key": 242,
+                                        "val": "242 - Poland"
+                                    },
+                                    {
+                                        "key": 243,
+                                        "val": "243 - Portugal"
+                                    },
+                                    {
+                                        "key": 317,
+                                        "val": "317 - Prince Edward Island"
+                                    },
+                                    {
+                                        "key": 46,
+                                        "val": "46 - Puerto Rico"
+                                    },
+                                    {
+                                        "key": 245,
+                                        "val": "245 - Qatar"
+                                    },
+                                    {
+                                        "key": 312,
+                                        "val": "312 - Quebec"
+                                    },
+                                    {
+                                        "key": 246,
+                                        "val": "246 - Reunion"
+                                    },
+                                    {
+                                        "key": 247,
+                                        "val": "247 - Romania"
+                                    },
+                                    {
+                                        "key": 248,
+                                        "val": "248 - Russian Federation"
+                                    },
+                                    {
+                                        "key": 249,
+                                        "val": "249 - Rwanda"
+                                    },
+                                    {
+                                        "key": 250,
+                                        "val": "250 - Saint Barth\u00e9lemy"
+                                    },
+                                    {
+                                        "key": 251,
+                                        "val": "251 - Saint Helena"
+                                    },
+                                    {
+                                        "key": 252,
+                                        "val": "252 - Saint Kitts and Nevis"
+                                    },
+                                    {
+                                        "key": 253,
+                                        "val": "253 - Saint Lucia"
+                                    },
+                                    {
+                                        "key": 254,
+                                        "val": "254 - Saint Martin (French part)"
+                                    },
+                                    {
+                                        "key": 255,
+                                        "val": "255 - Saint Pierre and Miquelon"
+                                    },
+                                    {
+                                        "key": 256,
+                                        "val": "256 - Saint Vincent and the Grenadines"
+                                    },
+                                    {
+                                        "key": 257,
+                                        "val": "257 - Samoa"
+                                    },
+                                    {
+                                        "key": 258,
+                                        "val": "258 - San Marino"
+                                    },
+                                    {
+                                        "key": 259,
+                                        "val": "259 - Sao Tome and Principe"
+                                    },
+                                    {
+                                        "key": 318,
+                                        "val": "318 - Saskatchewan"
+                                    },
+                                    {
+                                        "key": 260,
+                                        "val": "260 - Saudi Arabia"
+                                    },
+                                    {
+                                        "key": 261,
+                                        "val": "261 - Senegal"
+                                    },
+                                    {
+                                        "key": 262,
+                                        "val": "262 - Serbia"
+                                    },
+                                    {
+                                        "key": 263,
+                                        "val": "263 - Seychelles"
+                                    },
+                                    {
+                                        "key": 264,
+                                        "val": "264 - Sierra Leone"
+                                    },
+                                    {
+                                        "key": 265,
+                                        "val": "265 - Singapore"
+                                    },
+                                    {
+                                        "key": 266,
+                                        "val": "266 - Slovakia"
+                                    },
+                                    {
+                                        "key": 267,
+                                        "val": "267 - Slovenia"
+                                    },
+                                    {
+                                        "key": 268,
+                                        "val": "268 - Solomon Islands"
+                                    },
+                                    {
+                                        "key": 269,
+                                        "val": "269 - Somalia"
+                                    },
+                                    {
+                                        "key": 270,
+                                        "val": "270 - South Africa"
+                                    },
+                                    {
+                                        "key": 271,
+                                        "val": "271 - South Georgia and the South Sandwich Islands"
+                                    },
+                                    {
+                                        "key": 324,
+                                        "val": "324 - South Sudan"
+                                    },
+                                    {
+                                        "key": 70,
+                                        "val": "70 - Spain"
+                                    },
+                                    {
+                                        "key": 273,
+                                        "val": "273 - Sri Lanka"
+                                    },
+                                    {
+                                        "key": 274,
+                                        "val": "274 - Sudan"
+                                    },
+                                    {
+                                        "key": 275,
+                                        "val": "275 - Suriname"
+                                    },
+                                    {
+                                        "key": 276,
+                                        "val": "276 - Svalbard and Jan Mayen"
+                                    },
+                                    {
+                                        "key": 277,
+                                        "val": "277 - Swaziland"
+                                    },
+                                    {
+                                        "key": 278,
+                                        "val": "278 - Sweden"
+                                    },
+                                    {
+                                        "key": 279,
+                                        "val": "279 - Switzerland"
+                                    },
+                                    {
+                                        "key": 280,
+                                        "val": "280 - Syrian Arab Republic"
+                                    },
+                                    {
+                                        "key": 281,
+                                        "val": "281 - Taiwan"
+                                    },
+                                    {
+                                        "key": 282,
+                                        "val": "282 - Tajikistan"
+                                    },
+                                    {
+                                        "key": 283,
+                                        "val": "283 - Tanzania, United Republic of"
+                                    },
+                                    {
+                                        "key": 284,
+                                        "val": "284 - Thailand"
+                                    },
+                                    {
+                                        "key": 285,
+                                        "val": "285 - Timor-Leste"
+                                    },
+                                    {
+                                        "key": 286,
+                                        "val": "286 - Togo"
+                                    },
+                                    {
+                                        "key": 287,
+                                        "val": "287 - Tokelau"
+                                    },
+                                    {
+                                        "key": 288,
+                                        "val": "288 - Tonga"
+                                    },
+                                    {
+                                        "key": 289,
+                                        "val": "289 - Trinidad and Tobago"
+                                    },
+                                    {
+                                        "key": 290,
+                                        "val": "290 - Tunisia"
+                                    },
+                                    {
+                                        "key": 291,
+                                        "val": "291 - Turkey"
+                                    },
+                                    {
+                                        "key": 292,
+                                        "val": "292 - Turkmenistan"
+                                    },
+                                    {
+                                        "key": 293,
+                                        "val": "293 - Turks and Caicos Islands"
+                                    },
+                                    {
+                                        "key": 294,
+                                        "val": "294 - Tuvalu"
+                                    },
+                                    {
+                                        "key": 295,
+                                        "val": "295 - Uganda"
+                                    },
+                                    {
+                                        "key": 296,
+                                        "val": "296 - Ukraine"
+                                    },
+                                    {
+                                        "key": 297,
+                                        "val": "297 - United Arab Emirates"
+                                    },
+                                    {
+                                        "key": 298,
+                                        "val": "298 - United Kingdom"
+                                    },
+                                    {
+                                        "key": 61,
+                                        "val": "61 - United States"
+                                    },
+                                    {
+                                        "key": 300,
+                                        "val": "300 - United States Minor Outlying Islands"
+                                    },
+                                    {
+                                        "key": 301,
+                                        "val": "301 - Uruguay"
+                                    },
+                                    {
+                                        "key": 302,
+                                        "val": "302 - Uzbekistan"
+                                    },
+                                    {
+                                        "key": 303,
+                                        "val": "303 - Vanuatu"
+                                    },
+                                    {
+                                        "key": 304,
+                                        "val": "304 - Venezuela"
+                                    },
+                                    {
+                                        "key": 305,
+                                        "val": "305 - Viet Nam"
+                                    },
+                                    {
+                                        "key": 54,
+                                        "val": "54 - Virgin Islands"
+                                    },
+                                    {
+                                        "key": 306,
+                                        "val": "306 - Wallis and Futuna"
+                                    },
+                                    {
+                                        "key": 307,
+                                        "val": "307 - Western Sahara"
+                                    },
+                                    {
+                                        "key": 308,
+                                        "val": "308 - Yemen"
+                                    },
+                                    {
+                                        "key": 322,
+                                        "val": "322 - Yukon"
+                                    },
+                                    {
+                                        "key": 309,
+                                        "val": "309 - Zambia"
+                                    },
+                                    {
+                                        "key": 310,
+                                        "val": "310 - Zimbabwe"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Country",
+                            "name": "country",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "true",
+                                        "val": "true"
+                                    },
+                                    {
+                                        "key": "false",
+                                        "val": "false"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Confidential?",
+                            "name": "confidential",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "true",
+                                        "val": "true"
+                                    },
+                                    {
+                                        "key": "false",
+                                        "val": "false"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": false,
+                            "description": "Private?",
+                            "name": "private",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Name of department or unit",
+                            "name": "department",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Open"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = On Hold"
+                                    },
+                                    {
+                                        "key": 8,
+                                        "val": "8 = Approved"
+                                    },
+                                    {
+                                        "key": 7,
+                                        "val": "7 = Needs Approval"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = Drafting"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4 = Filled"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5 = Cancelled"
+                                    },
+                                    {
+                                        "key": 6,
+                                        "val": "6 = Closed"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": 1,
+                            "description": "Job Status",
+                            "name": "job_status",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "State",
+                            "name": "state",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "City",
+                            "name": "city",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Postal Code",
+                            "name": "postal_code",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "true",
+                                        "val": "true"
+                                    },
+                                    {
+                                        "key": "false",
+                                        "val": "false"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Indicates whether job is syndicated to Indeed, Simply Hired, and other job boards",
+                            "name": "syndication",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": "workflow_1",
+                            "description": "Workflow ID - Look ID up in the Settings | Workflows screen, hover over 'Edit' link for Workflow you want to associate with Job, inspect URL to spot ID of the form 'workflow_20120128193942_YPNPSVBH26PCAXZX' (sample)",
+                            "name": "workflow_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Address",
+                            "name": "canned_address",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 3,
+                                    "val": "3 = Selected, Required"
+                                }
+                            ],
+                            "description": "Cover Letter",
+                            "name": "canned_cover_letter",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "References",
+                            "name": "canned_references",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 3,
+                                    "val": "3 = Selected, Required"
+                                }
+                            ],
+                            "description": "What Makes You Unique",
+                            "name": "canned_wmyu",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "LinkedIn",
+                            "name": "canned_linked_in",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Website, blog or portfolio",
+                            "name": "canned_website",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Twitter Username",
+                            "name": "canned_twitter_username",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Earliest Start Date",
+                            "name": "canned_start",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Work Weekends",
+                            "name": "canned_weekends",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Work Evenings",
+                            "name": "canned_evenings",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Work Overtime",
+                            "name": "canned_overtime",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Languages Spoken",
+                            "name": "canned_languages",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Desired Salary",
+                            "name": "canned_salary",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Referral Name",
+                            "name": "canned_referral",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Valid Drivers License",
+                            "name": "canned_license",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Commercial Driving License",
+                            "name": "canned_cdl",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Willing to Relocate",
+                            "name": "canned_relocate",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Citizen/Employment Status",
+                            "name": "canned_citizen",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Highest Education Obtained",
+                            "name": "canned_education",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "College/University",
+                            "name": "canned_college",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Grade Point Average (GPA)",
+                            "name": "canned_gpa",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Age 18 or Older",
+                            "name": "canned_over18",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Pilot - Flight Hours",
+                            "name": "canned_flighthours",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Pilot - Grade/Ratings",
+                            "name": "canned_flightgrade",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Felony Conviction",
+                            "name": "canned_felony",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Not Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Selected, Not Required"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Selected, Required"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": [
+                                {
+                                    "key": 0,
+                                    "val": "0 = Not Selected, Not Required"
+                                }
+                            ],
+                            "description": "Felony Explanation",
+                            "name": "canned_felonyexplain",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Questionnaire ID - Look ID up in the Settings | Questions screen, hover over Name, inspect URL to spot ID.",
+                            "name": "custom_questions_id",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Internal Job Code",
+                            "name": "internal_job_code",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 1,
+                                        "val": "1 - Executive/Senior Level Officials and Managers"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 - Professionals"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 - Technicians"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4 - Sales Workers"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5 - Administrative Support Workers"
+                                    },
+                                    {
+                                        "key": 6,
+                                        "val": "6 - Craft Workers"
+                                    },
+                                    {
+                                        "key": 7,
+                                        "val": "7 - Operatives"
+                                    },
+                                    {
+                                        "key": 8,
+                                        "val": "8 - Laborers and Helpers"
+                                    },
+                                    {
+                                        "key": 9,
+                                        "val": "9 - Service Workers"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 - First/Mid Level Officials & Managers"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Job Category",
+                            "name": "eeo_1_job_category",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "numeric",
+                            "description": "Minimum salary",
+                            "name": "approved_salary_range_minimum",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "numeric",
+                            "description": "Maximum salary",
+                            "name": "approved_salary_range_maximum",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "description": "Job Notes",
+                            "name": "job_notes",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The Date that the Job was originally created. Use YYYY-MM-DD format",
+                            "name": "open_date",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Jobs",
+                    "summary": "Create a Job"
+                }
+            ],
+            "path": "/jobs"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/jobs.{format}",
+    "swaggerVersion": "1.1"
+}

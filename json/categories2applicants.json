@@ -1,0 +1,119 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About categories2applicants mapping ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "category2applicant",
+                    "notes": "Returns Only One Prospect2Category detail",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Prospect2Category",
+                            "name": "pro2cat_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "categories2applicants",
+                    "summary": "Find Prospect2Category Details By ID"
+                }
+            ],
+            "path": "/categories2applicants/pro2cat_id"
+        },
+        {
+            "description": " Operations About categories2applicants ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "categories2applicants",
+                    "notes": "Any Number Of Parameters Can Be Used.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Applicant",
+                            "name": "applicant_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Category",
+                            "name": "category_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "numeric",
+                            "defaultValue": 1,
+                            "description": "Page number (100 results per page)",
+                            "name": "page",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "categories2applicants",
+                    "summary": "Find categories2applicants By parameters"
+                }
+            ],
+            "path": "/categories2applicants"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "categories2applicants",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Applicant",
+                            "name": "applicant_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Category",
+                            "name": "category_id",
+                            "paramType": "body",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "categories2applicants",
+                    "summary": "Post Category2Applicant mapping"
+                }
+            ],
+            "path": "/categories2applicants"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/categories2applicants.{format}",
+    "swaggerVersion": "1.1"
+}

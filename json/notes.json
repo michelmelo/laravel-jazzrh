@@ -1,0 +1,82 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "notes",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Applicant ID",
+                            "name": "applicant_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": "usr_anonymous",
+                            "description": "User ID",
+                            "name": "user_id",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "description": "Contents",
+                            "name": "contents",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Everyone (Admins and Users)"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 = Only Me and Admins"
+                                    },
+                                    {
+                                        "key": 30,
+                                        "val": "30 = Only Me (Private)"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": {
+                                "key": 1,
+                                "val": "1 = Everyone (Admins and Users)"
+                            },
+                            "description": "Security",
+                            "name": "security",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Notes",
+                    "summary": "Post Notes"
+                }
+            ],
+            "path": "/notes"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/notes.{format}",
+    "swaggerVersion": "1.1"
+}

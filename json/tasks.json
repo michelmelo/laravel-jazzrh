@@ -1,0 +1,82 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Tasks ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "tasksID",
+                    "notes": "Returns Only One Task",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Task",
+                            "name": "task_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Tasks",
+                    "summary": "Find Task By ID"
+                }
+            ],
+            "path": "/tasks/task_id"
+        },
+        {
+            "description": " Operations About Tasks ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "tasks",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "From Date of the Task ",
+                            "name": "from_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "To Date of the Task ",
+                            "name": "to_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Status of the Task ",
+                            "name": "status",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Tasks",
+                    "summary": "Find Tasks By Parameters"
+                }
+            ],
+            "path": "/tasks"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/tasks.{format}",
+    "swaggerVersion": "1.1"
+}

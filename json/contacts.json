@@ -1,0 +1,74 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Contacts ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "contactsID",
+                    "notes": "Returns Only One Contact",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Contact",
+                            "name": "contact_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Contacts",
+                    "summary": "Find Contact By ID"
+                }
+            ],
+            "path": "/contacts/contact_id"
+        },
+        {
+            "description": " Operations About Contacts ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "contacts",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Contact's From Date ",
+                            "name": "from_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Contact's To Date ",
+                            "name": "to_date",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Contacts",
+                    "summary": "Find Contacts By Parameters"
+                }
+            ],
+            "path": "/contacts"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/contacts.{format}",
+    "swaggerVersion": "1.1"
+}

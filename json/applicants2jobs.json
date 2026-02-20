@@ -1,0 +1,238 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Applicants2Jobs mapping ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "applicant2jobs",
+                    "notes": "Returns a single Applicants2Jobs record.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Job",
+                            "name": "appjob_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Applicants2Jobs",
+                    "summary": "Find Applicants2Jobs Details By ID"
+                }
+            ],
+            "path": "/applicants2jobs/appjob_id"
+        },
+        {
+            "description": " Operations About Applicants2Jobs ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "applicants2jobs",
+                    "notes": "Multiple parameters can be used.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Applicant",
+                            "name": "applicant_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Job",
+                            "name": "job_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Hiring manager rating of job. 0-5 (stars)",
+                            "name": "rating",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Workflow Status (step) that Applicant is currently in.  Defaults to first Workflow Step in Workflow, which is \u201cNew\u201d for Default Workflow.  To find workflow_step_id, in Settings | Workflows screen, Inspect Element for white background edge of a workflow step and look for an ID of the form id=\u201d25007\u201d on the inspected element (25007 would be the workflow_step_id).",
+                            "name": "workflow_step_id",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Applicants2Jobs",
+                    "summary": "Find Applicants2Jobs mapping By parameters"
+                }
+            ],
+            "path": "/applicants2jobs"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "applicants2jobs",
+                    "notes": "Multiple parameters can be used.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Applicant",
+                            "name": "applicant_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Job",
+                            "name": "job_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Workflow Status (step) that Applicant is currently in.  Defaults to first Workflow Step in Workflow, which is \u201cNew\u201d for Default Workflow.  To find workflow_step_id, in Settings | Workflows screen, Inspect Element for white background edge of a workflow step and look for an ID of the form id=\u201d25007\u201d on the inspected element (25007 would be the workflow_step_id).",
+                            "name": "workflow_step_id",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Hiring manager rating of job. 0-5 (stars)",
+                            "name": "rating",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": "",
+                            "description": "Date that POST was added to table. Use YYYY-MM-DD format",
+                            "name": "submission_date",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Applicants2Jobs",
+                    "summary": "Post Applicants2Jobs Mapping"
+                }
+            ],
+            "path": "/applicants2jobs"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "hires",
+                    "notes": "Ordered by hired date.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "numeric",
+                            "defaultValue": 1,
+                            "description": "Page number (100 results per page)",
+                            "name": "page",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Hires",
+                    "summary": "Find candidates who were hired."
+                }
+            ],
+            "path": "/hires"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/applicants2jobs.{format}",
+    "swaggerVersion": "1.1"
+}

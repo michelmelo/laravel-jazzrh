@@ -1,0 +1,5 @@
+use MichelMelo\JazzRh\Controllers\FileController;
+
+// ...existing code...
+
+Route::apiResource('files', FileController::class);

@@ -1,0 +1,58 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": "Operations About Questionnaire Questions ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "questionnaire_questions",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of questionnaire",
+                            "name": "questionnaire_id",
+                            "paramType": "path",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": "1",
+                                        "val": "1 - Active"
+                                    },
+                                    {
+                                        "key": "5",
+                                        "val": "5 - Archived"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Filter by question status",
+                            "name": "question_status",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Questionnaire_Questions",
+                    "summary": "Get Questionnaire Questions By parameters"
+                }
+            ],
+            "path": "/questionnaire_questions"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/questionnaire_questions.{format}",
+    "swaggerVersion": "1.1"
+}

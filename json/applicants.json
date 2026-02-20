@@ -1,0 +1,885 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Applicants ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "applicantsID",
+                    "notes": "Returns only one applicant.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Applicant's ID",
+                            "name": "applicant_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Applicants",
+                    "summary": "Find applicant by ID"
+                }
+            ],
+            "path": "/applicants/applicant_id"
+        },
+        {
+            "description": " Operations About Applicants ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "applicants",
+                    "notes": "Returns one page of applicants that meet search criteria.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Any substring in first or last name",
+                            "name": "name",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": " ",
+                            "name": "city",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": " ",
+                            "name": "job_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": " ",
+                            "name": "job_title",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": " ",
+                            "name": "recruiter_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Exact applied date in YYYY-MM-DD format",
+                            "name": "apply_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "YYYY-MM-DD",
+                            "name": "from_apply_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "YYYY-MM-DD",
+                            "name": "to_apply_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Applicant's workflow status ID",
+                            "name": "status",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Applicant's rating (1-5)",
+                            "name": "rating",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Applicants",
+                    "summary": "Find applicants by parameters"
+                }
+            ],
+            "path": "/applicants"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "applicants",
+                    "notes": "Create an applicant and optionally apply them to a single job. To apply the applicant to more jobs, use applicants2jobs.",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "first_name",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "last_name",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "email",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Date that applicant applied in format YYYY-MM-DD ",
+                            "name": "apply_date",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Street address",
+                            "name": "address",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "city",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "State or province",
+                            "name": "state",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Postal/zip code",
+                            "name": "postal",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "phone",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Job ID that applicant applied to",
+                            "name": "job",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Applicant's current workflow status ID",
+                            "name": "workflow_step_id",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "coverletter",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Where the applicant came from",
+                            "name": "source",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Name of who referred the applicant",
+                            "name": "referral",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Driver's license status",
+                            "name": "license",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Commercial driver's license",
+                            "name": "cdl",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Is willing to relocate?",
+                            "name": "relocate",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 = I am a U.S. Citizen/Permanent Resident"
+                                    },
+                                    {
+                                        "key": 20,
+                                        "val": "20 = Non-citizen allowed to work for any employer"
+                                    },
+                                    {
+                                        "key": 30,
+                                        "val": "30 = Non-citizen allowed to work for current employer"
+                                    },
+                                    {
+                                        "key": 40,
+                                        "val": "40 = Non-citizen seeking work authorization"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Citizenship status",
+                            "name": "citizen",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Name of college/university attended",
+                            "name": "college",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "",
+                            "name": "gpa",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Whether the applicant is over 18",
+                            "name": "over18",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Total and command flight hours",
+                            "name": "flighthours",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 = Student Pilot"
+                                    },
+                                    {
+                                        "key": 20,
+                                        "val": "20 = Recreational Pilot"
+                                    },
+                                    {
+                                        "key": 30,
+                                        "val": "30 = Private Pilot"
+                                    },
+                                    {
+                                        "key": 40,
+                                        "val": "40 = Commercial Pilot"
+                                    },
+                                    {
+                                        "key": 50,
+                                        "val": "50 = Airline Transport Pilot"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Pilot rating",
+                            "name": "flightgrade",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Linkedin profile URL",
+                            "name": "linkedin",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Twitter handle",
+                            "name": "twitter",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Website, blog, or portfolio URL",
+                            "name": "website",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Fluent languages",
+                            "name": "languages",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Desired salary",
+                            "name": "salary",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Earliest desired start date",
+                            "name": "start",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Can work weekends",
+                            "name": "weekends",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Can work evenings",
+                            "name": "evenings",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Yes"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = No"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Can work overtime",
+                            "name": "overtime",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = No"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = Yes"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Has been convicted of a felony",
+                            "name": "felony",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Felony explanation",
+                            "name": "felonyexplain",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "What Makes You Unique?",
+                            "name": "wmyu",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "List of references",
+                            "name": "references",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": null,
+                                        "val": "NULL = No Answer"
+                                    },
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Decline to answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Female"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = Male"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Gender (will not be used as a selection criteria)",
+                            "name": "eeo_gender",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": null,
+                                        "val": "NULL = No Answer"
+                                    },
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Decline to answer"
+                                    },
+                                    {
+                                        "key": 50,
+                                        "val": "50 = Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 51,
+                                        "val": "51 = White, not Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 52,
+                                        "val": "52 = Black or African-American, not Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 53,
+                                        "val": "53 = Asian, not Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 54,
+                                        "val": "54 = Native Hawaiian or Other Pacific Islander, not Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 55,
+                                        "val": "55 = American Indian or Alaskan Native, not Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 56,
+                                        "val": "56 = Two or More Races, not Hispanic or Latino"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = White (Not Hispanic) (Deprecated)"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5 = African American/Black (Not Hispanic) (Deprecated)"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 = Hispanic (Deprecated)"
+                                    },
+                                    {
+                                        "key": 15,
+                                        "val": "15 = Asian (Deprecated)"
+                                    },
+                                    {
+                                        "key": 20,
+                                        "val": "20 = Pacific Islander (Deprecated)"
+                                    },
+                                    {
+                                        "key": 25,
+                                        "val": "25 = American Indian (Deprecated)"
+                                    },
+                                    {
+                                        "key": 30,
+                                        "val": "30 = Native Alaskan (Deprecated)"
+                                    },
+                                    {
+                                        "key": 35,
+                                        "val": "35 = Native Hawaiian (Deprecated)"
+                                    },
+                                    {
+                                        "key": 40,
+                                        "val": "40 = Multi-racial (Deprecated)"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Race (will not be used as a selection criteria)",
+                            "name": "eeo_race",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": null,
+                                        "val": "NULL = No Answer"
+                                    },
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Decline to Answer"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Vietnam Era Veteran"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = Other Protected Veteran"
+                                    },
+                                    {
+                                        "key": 3,
+                                        "val": "3 = Special Disabled Veteran"
+                                    },
+                                    {
+                                        "key": 4,
+                                        "val": "4 = 1 Yr. Recently Separated Veteran"
+                                    },
+                                    {
+                                        "key": 5,
+                                        "val": "5 = Disabled Veteran"
+                                    },
+                                    {
+                                        "key": 6,
+                                        "val": "6 = 3 Yr. Recently Separated Veteran"
+                                    },
+                                    {
+                                        "key": 7,
+                                        "val": "7 = Not applicable"
+                                    },
+                                    {
+                                        "key": 10,
+                                        "val": "10 = Disabled Individual"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Veteran/disability status (will not be used as a selection criteria)",
+                            "name": "eeo_disability",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = No answer (not required)"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERAN LISTED ABOVE"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = I AM NOT A PROTECTED VETERAN"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "New veteran status (will not be used as a selection criteria)",
+                            "name": "eeoc_veteran",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = I DON\u2019T WISH TO ANSWER"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = YES, I HAVE A DISABILITY (or previously had a disability)"
+                                    },
+                                    {
+                                        "key": 2,
+                                        "val": "2 = NO, I DON\u2019T HAVE A DISABILITY"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "New disability status (will not be used as a selection criteria)",
+                            "name": "eeoc_disability",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Signature for new disability status",
+                            "name": "eeoc_disability_signature",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Date of signature for new disability status",
+                            "name": "eeoc_disability_date",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "description": "Plain text resume",
+                            "name": "resumetext",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "description": "Base 64 encoded resume",
+                            "name": "base64-resume",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Applicants",
+                    "summary": "Create an applicant"
+                }
+            ],
+            "path": "/applicants"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/applicants.{format}",
+    "swaggerVersion": "1.1"
+}

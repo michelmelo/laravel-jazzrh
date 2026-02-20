@@ -1,0 +1,5 @@
+use MichelMelo\JazzRh\Controllers\ContactController;
+
+// ...existing code...
+
+Route::apiResource('contacts', ContactController::class);

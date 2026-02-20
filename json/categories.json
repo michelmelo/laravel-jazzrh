@@ -1,0 +1,160 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Categories mapping ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "category",
+                    "notes": "Returns Only One Category detail",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the Category",
+                            "name": "category_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Categories",
+                    "summary": "Find Category Details By ID"
+                }
+            ],
+            "path": "/categories/category_id"
+        },
+        {
+            "description": " Operations About Categories ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "categories",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the User who created the category",
+                            "name": "user_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "String tag for category itself.  E.g. passing string 'Golf' creates a new category 'Golf' which can be used to tag applicants",
+                            "name": "name",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Disabled"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Enabled"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Select category status to filter",
+                            "name": "status",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Category creation From Date. Use YYYY-MM-DD format",
+                            "name": "from_creation_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Category creation To Date. Use YYYY-MM-DD format",
+                            "name": "to_creation_date",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Categories",
+                    "summary": "Find Categories By parameters"
+                }
+            ],
+            "path": "/categories"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "categories",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "String tag for category itself.  E.g. passing string 'Golf' creates a new category 'Golf' which can be used to tag applicants",
+                            "name": "name",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 = Disabled"
+                                    },
+                                    {
+                                        "key": 1,
+                                        "val": "1 = Enabled"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "description": "Valid values are 'Enabled' = 1, 'Disabled' = 0",
+                            "name": "status",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Categories",
+                    "summary": "Post Category"
+                }
+            ],
+            "path": "/categories"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/categories.{format}",
+    "swaggerVersion": "1.1"
+}

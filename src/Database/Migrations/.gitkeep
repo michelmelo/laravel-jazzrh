@@ -1,0 +1,12 @@
+<?php
+
+return [
+    // Created at: 2026-02-20 00:00:00
+    'development' => true,
+    'up' => function () {
+        // Migration up
+    },
+    'down' => function () {
+        // Migration down
+    },
+];

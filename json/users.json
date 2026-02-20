@@ -1,0 +1,82 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Users ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "usersID",
+                    "notes": "Returns Only One User",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the User",
+                            "name": "user_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Users",
+                    "summary": "Find User By ID"
+                }
+            ],
+            "path": "/users/user_id"
+        },
+        {
+            "description": " Operations About Users ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "users",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Name of the User ",
+                            "name": "name",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Email of the User ",
+                            "name": "email",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Type of the User ",
+                            "name": "type",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Users",
+                    "summary": "Find Users By Parameters"
+                }
+            ],
+            "path": "/users"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/users.{format}",
+    "swaggerVersion": "1.1"
+}

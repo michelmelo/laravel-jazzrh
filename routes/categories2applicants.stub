@@ -1,0 +1,5 @@
+use MichelMelo\JazzRh\Controllers\Categories2ApplicantsController;
+
+// ...existing code...
+
+Route::apiResource('categories2applicants', Categories2ApplicantsController::class);

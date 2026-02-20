@@ -1,0 +1,171 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "description": " Operations About Files management ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "file",
+                    "notes": "Returns Only One File detail",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the File",
+                            "name": "file_id",
+                            "paramType": "path",
+                            "required": true
+                        }
+                    ],
+                    "responseClass": "Files",
+                    "summary": "Find File Details By ID"
+                }
+            ],
+            "path": "/files/file_id"
+        },
+        {
+            "description": " Operations About Files ",
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "files",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of the User who uploaded the file",
+                            "name": "user_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of applicant with whom this file is associated with",
+                            "name": "applicant_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Files creation From Date. Use YYYY-MM-DD format",
+                            "name": "from_creation_date",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Files creation To Date. Use YYYY-MM-DD format",
+                            "name": "to_creation_date",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Files",
+                    "summary": "Find Files By parameters"
+                }
+            ],
+            "path": "/files"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "files",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of applicant with whom this file is associated with",
+                            "name": "applicant_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Name of file, e.g. john_smith_resume.pdf",
+                            "name": "filename",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": true,
+                            "dataType": "string",
+                            "description": "Base64-encoded version of uploaded file contents",
+                            "name": "file_data",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of Resumator user uploading file",
+                            "name": "user_id",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "allowableValues": {
+                                "valueType": "LIST",
+                                "values": [
+                                    {
+                                        "key": 0,
+                                        "val": "0 - Everyone"
+                                    },
+                                    {
+                                        "key": 30,
+                                        "val": "30 - Admins only"
+                                    },
+                                    {
+                                        "key": 40,
+                                        "val": "40 - Only me"
+                                    }
+                                ]
+                            },
+                            "dataType": "string",
+                            "defaultValue": {
+                                "key": 0,
+                                "val": "0 - Everyone"
+                            },
+                            "description": "Choose file privacy",
+                            "name": "file_privacy",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Files",
+                    "summary": "Post File"
+                }
+            ],
+            "path": "/files"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/files.{format}",
+    "swaggerVersion": "1.1"
+}

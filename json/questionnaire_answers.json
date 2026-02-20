@@ -1,0 +1,267 @@
+{
+    "apiVersion": "0.1",
+    "apis": [
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "GET",
+                    "nickname": "questionnaire_answers",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Questionnnaire Id",
+                            "name": "questionnaire_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": "",
+                            "description": "Applicant ID",
+                            "name": "applicant_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "Job Id",
+                            "name": "job_id",
+                            "paramType": "path",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "numeric",
+                            "defaultValue": 1,
+                            "description": "Page number (100 results per page)",
+                            "name": "page",
+                            "paramType": "path",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Questionnaire_Answers",
+                    "summary": "Find Questionnaire Answers by ID"
+                }
+            ],
+            "path": "/questionnaire_answers"
+        },
+        {
+            "operations": [
+                {
+                    "errorResponses": [
+                        {
+                            "code": 401,
+                            "reason": "Invalid API Key"
+                        }
+                    ],
+                    "httpMethod": "POST",
+                    "nickname": "questionnaire_answers",
+                    "notes": "Any Number Of Parameters Can Be Used",
+                    "parameters": [
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of applicant submitting answer",
+                            "name": "applicant_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": "",
+                            "description": "ID of questionnaire",
+                            "name": "questionnaire_id",
+                            "paramType": "body",
+                            "required": true
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "ID of job that questionnaire is associated with, *if* questionnaire is associated with a job (else leave blank)",
+                            "name": "job_id",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_01",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_02",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_03",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_04",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_05",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_06",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_07",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_08",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_09",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_10",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_11",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_12",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_13",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_14",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_15",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_16",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_17",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_18",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_19",
+                            "paramType": "body",
+                            "required": false
+                        },
+                        {
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "description": "The user provided answer",
+                            "name": "answer_value_20",
+                            "paramType": "body",
+                            "required": false
+                        }
+                    ],
+                    "responseClass": "Questionnaire_Answers",
+                    "summary": "Post Questionnaire Answers"
+                }
+            ],
+            "path": "/questionnaire_answers"
+        }
+    ],
+    "basePath": "https://api.resumatorapi.com/v1/",
+    "resourcePath": "/questionnaire_answers.{format}",
+    "swaggerVersion": "1.1"
+}
