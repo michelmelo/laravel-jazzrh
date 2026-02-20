@@ -207,7 +207,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ## Support
 
-For support, email dev@michelmelo.com or open an issue on GitHub.
+For support, email eu@michelmelo.pt or open an issue on GitHub.
 
 ## Changelog
 

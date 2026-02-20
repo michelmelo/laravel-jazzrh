@@ -154,5 +154,5 @@ php artisan config:clear
 
 For issues or questions:
 - Open an issue on GitHub
-- Email: dev@michelmelo.com
+- Email: eu@michelmelo.pt
 - Check the documentation in the `docs/` directory

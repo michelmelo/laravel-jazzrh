@@ -181,4 +181,4 @@ By contributing to JazzRH, you agree that your contributions will be licensed un
 
 ## Questions or Need Help?
 
-Feel free to open an issue or contact the maintainers at dev@michelmelo.com
+Feel free to open an issue or contact the maintainers at eu@michelmelo.pt
